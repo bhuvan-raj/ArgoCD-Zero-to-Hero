@@ -20,7 +20,7 @@ GitOps is an operational framework that uses Git as the single source of truth f
 
 ## 2\. What is Argo CD? 🌟
 
-<img src="https://github.com/bhuvan-raj/ArgoCD-Zero-to-Hero/blob/main/assets/argocd.png" alt="Banner" />
+<img src="https://github.com/bhuvan-raj/ArgoCD-Zero-to-Hero/blob/main/assets/argo.png" alt="Banner" />
 
 **Argo CD** is a declarative, GitOps continuous delivery tool for Kubernetes. It automates the deployment and lifecycle management of applications by synchronizing application definitions from a Git repository to target Kubernetes clusters. It ensures that the state of your applications in the cluster always matches the desired state defined in Git.
 
