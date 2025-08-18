@@ -108,9 +108,8 @@ To effectively use Argo CD, it's essential to understand its fundamental buildin
 Argo CD is implemented as a set of Kubernetes controllers and CRDs. Its main components are:
 
   * **API Server:** A gRPC/REST server that exposes the Argo CD API. The web UI and CLI interact with this server to manage applications.
-  * **Controller:** The core component. It continuously monitors registered Git repositories and Kubernetes clusters, compares the desired state (from Git) with the actual state (in the cluster), and performs reconciliation operations (creating, updating, deleting resources).
   * **Repo Server:** An internal service responsible for cloning and caching Git repositories. It also renders Kubernetes manifests from various sources (Helm charts, Kustomize, etc.), offloading this heavy lifting from the controller.
-  * **Application Controller:** Manages the lifecycle of Argo CD's custom `Application` resources.
+  * **Application Controller:** The core component. It continuously monitors registered Git repositories and Kubernetes clusters, compares the desired state (from Git) with the actual state (in the cluster), and performs reconciliation operations (creating, updating, deleting resources).
   * **ApplicationSet Controller (Optional):** Extends Argo CD to manage multiple Argo CD Applications. It's often used for deploying common application sets across many clusters or namespaces from a single source.
   * **Notifications Controller (Optional):** Sends notifications about application events (sync status, health changes) to various channels like Slack, Email, etc.
   * **Web UI & CLI:** User-friendly interfaces for managing Argo CD, creating applications, viewing status, and triggering syncs.
