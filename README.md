@@ -210,12 +210,12 @@ To interact with Argo CD, you can use its web UI.
 
 1.  **Retrieve the Initial Admin Password:**
     The initial password for the `admin` user is generated automatically and stored in a Kubernetes secret.
-    ** For Linux **
+    - For Linux
     ```bash
     kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
     # Copy this password for later use
     ```
-    ** For windows(powershell) **
+    - For windows(powershell)
 ```
     $pwd = kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}"
 [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String($pwd))
