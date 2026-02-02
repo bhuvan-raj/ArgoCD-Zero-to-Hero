@@ -210,13 +210,18 @@ To interact with Argo CD, you can use its web UI.
 
 1.  **Retrieve the Initial Admin Password:**
     The initial password for the `admin` user is generated automatically and stored in a Kubernetes secret.
-
+    ** For Linux **
     ```bash
     kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
     # Copy this password for later use
     ```
+    ** For windows(powershell) **
+```
+    $pwd = kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}"
+[System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String($pwd))
+```
 
-2.  **Expose the Argo CD API Server (using Port-Forwarding for local access):**
+3.  **Expose the Argo CD API Server (using Port-Forwarding for local access):**
     For a quick local demo, you can use `kubectl port-forward`. For production, you'd typically use an Ingress or LoadBalancer.
 
     ```bash
@@ -226,7 +231,7 @@ To interact with Argo CD, you can use its web UI.
     Now, open your web browser and navigate to `https://localhost:8080`.
     *You might see a security warning due to the self-signed certificate; proceed anyway.*
 
-3.  **Log in to the UI:**
+4.  **Log in to the UI:**
 
       * **Username:** `admin`
       * **Password:** The password you retrieved in step 2.
